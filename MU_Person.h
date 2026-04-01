@@ -20,7 +20,7 @@ inline MU_person::MU_person(long x,string n,long nat):Thai_person(nat)
 {
   id=x;
   name=n;
-  cout<<"MU person constructor "<<id<<endl;
+  cout<<"MU person constructor " <<id<<endl;
 }
 
 inline void MU_person::display_person()

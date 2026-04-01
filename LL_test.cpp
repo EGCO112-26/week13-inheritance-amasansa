@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
         A.add_node(t); 
     }
 
-    cout << endl;
+    // cout << endl;
     A.show_all();
 
     return 0;

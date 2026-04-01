@@ -27,7 +27,7 @@ void LL::show_all()
           cout <<"Node data:" <<t->get_id() <<endl; 
           t=t->move_next();
      }
-     cout <<endl;
+     // cout <<endl;
 }
 
 void LL::add_node(NODE *&A)

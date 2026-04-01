@@ -16,7 +16,7 @@ public:
 inline student::student(long i,double g,string s,long nat):MU_person(i,s,nat)
 { //************** :MU_person(i,s) ส่งข้อมูลต่อ
   gpa=g;
-  cout <<"MU student constructor "<<gpa <<endl;
+  cout <<"MU student constructor  " <<gpa <<endl;
 }
 inline student::~student(){}
 inline void student::display()
