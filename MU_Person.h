@@ -1,34 +1,31 @@
-#ifndef MU_PERSON_H
-#define MU_PERSON_H
-#include "Thai_person.h"
-
-class MU_person:public Thai_person
-{
+#include "NODE.h"
+using namespace std;
+class MU_person:public NODE{
+private: 
+  // long id;
+	// string name;
 protected:
   long id;
 	string name;
 
 public:
-	MU_person(long=112,string="Prapaporn",long=0); //constructor
+	MU_person(long=112, string = "Pakchee"); //รับมาจาก thai 2 ค่า เลยต้องเพิ่มมาอีก 2 ค่า
   void display_person();
-  ~MU_person(); //destructor
-  long get_id(){ return id; }
+  ~MU_person();
 };
 
-inline MU_person::~MU_person(){}
-inline MU_person::MU_person(long x,string n,long nat):Thai_person(nat)
-{
-  id=x;
-  name=n;
-  cout<<"MU person constructor " <<id<<endl;
+MU_person::~MU_person(){
+  cout<<"Destructor id="<<id<<std::endl;
+}
+MU_person::MU_person(long x,string n):NODE(x){
+  id = x;
+  name = n;
+  cout<<"MU person constructor "<<id<<std::endl;
 }
 
-inline void MU_person::display_person()
-{
-  cout <<"--- Show all info ---" <<endl;
-  display_thai();
-  cout <<"Student ID: " <<id <<endl;
-  cout <<"Name: " <<name <<endl;
+void MU_person::display_person(){
+  cout<<"Show info per person"<<std::endl;
+  cout<<"Name: "<<name<<std::endl;
+  cout<<"id: "<<id<<std::endl;
+  cout<<std::endl;
 }
-
-#endif

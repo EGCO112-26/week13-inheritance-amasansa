@@ -1,25 +1,21 @@
-#ifndef THAI_PERSON_H
-#define THAI_PERSON_H
-#include <iostream>
-using namespace std;
-class Thai_person
-{
+class Thai_person{
 	private: 
-	// protected:
 		long nat_id;
+		string blood;
 	public: 
-		Thai_person(long=0);
-		~Thai_person() {}
-    	void display_thai() 
-		{
-        	cout <<"National ID: " <<nat_id <<endl;
-    	}
-    	long get_nat_id(){ return nat_id; }
+		Thai_person(int=0,string = "invalid");
+		void display_Thai();
 };
 
-inline Thai_person::Thai_person(long a)
-{
-	nat_id=a;
+Thai_person::Thai_person(int n,string b){
+	nat_id = n;
+	blood = b;
+	cout<<"Thai person constructor"<<endl;
 }
 
-#endif
+void Thai_person::display_Thai(){
+	cout<<"Show Thai person info"<<endl;
+	cout<<"National id: "<<nat_id<<endl;
+	cout<<"Blood type: "<<blood<<endl;
+	cout<<endl;
+}

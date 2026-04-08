@@ -2,27 +2,20 @@
 using namespace std;
 #include "NODE.h"
 
-NODE::NODE(int x,string n,float g):student(x,g,n) 
-{ 
+NODE::NODE(int x){
+    data=x;
     next=NULL;
+    cout<<"adding "<< x <<endl;
 }
-
-NODE::~NODE() 
-{
-    cout <<"Node " <<id <<" is being deleted" <<endl;
+NODE:: ~NODE(){
+    cout<<"Node "<<data<<" is being deleted"<<endl;
 }
-
-NODE* NODE::move_next() 
-{
+NODE* NODE::move_next(){
     return next;
 }
-
-void NODE::show_node() 
-{
-    display(); 
-}
-
-void NODE::insert(NODE*& x) 
-{
-    this->next=x;
+void  NODE:: show_node(){
+    cout<<"Node data:"<<data<<endl;
+ }
+void NODE::insert(NODE*& x){
+    x->next=this;
 }

@@ -1,27 +1,27 @@
-#ifndef STUDENT_H
-#define STUDENT_H
 #include "MU_Person.h"
 
-class student:public MU_person
-{
+class student:public MU_person{
 private:
   double gpa; 
 	
 public:
-  student(long=111,double=2.5,string="Nattawut",long=0);
+  student(long=111 ,double=2.5,string="Nattawut");
   ~student();
-  void display();
+  void display(); // display_person
 };
 
-inline student::student(long i,double g,string s,long nat):MU_person(i,s,nat)
-{ //************** :MU_person(i,s) ส่งข้อมูลต่อ
-  gpa=g;
-  cout <<"MU student constructor  " <<gpa <<endl;
+student::student(long i, double g, string s):MU_person(i,s)/*send info to MU_person*/{
+  id = i;
+  gpa = g;
+  name = s;
+  cout<<"MU student constructor  "<<gpa<<endl;
 }
-inline student::~student(){}
-inline void student::display()
-{
+student::~student(){
+  cout<<"-------"<<endl;
+  cout<<"student destructor "<<gpa<<endl; 
+}
+
+void student::display(){
   display_person();
-  cout <<"GPA: " <<gpa <<endl;
+  cout<<"Gpa: "<<gpa<<endl;
 }
-#endif

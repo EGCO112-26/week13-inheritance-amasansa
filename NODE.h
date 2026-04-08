@@ -1,15 +1,10 @@
-#ifndef NODE_H
-#define NODE_H
-#include "student.h"
-
-class NODE : public student 
-{
+class NODE{
+    int data;
     NODE* next;
 public:
-    NODE(int id,string name,float gpa); 
+    NODE(int);
     void show_node();
     void insert(NODE*&);
     NODE* move_next();
     ~NODE();
 };
-#endif

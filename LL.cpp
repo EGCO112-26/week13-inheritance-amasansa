@@ -2,37 +2,32 @@
 #include"NODE.h"
 #include"LL.h"
 using namespace std;
-LL::LL()
-{ //constructors
+LL::LL(){
      hol=NULL;
      size=0;
 }
 
-LL::~LL()
-{ //destructors
-     NODE* t;
-     while(hol!=NULL)
-     {
+LL::~LL(){
+     int i;
+     NODE* t=hol;
+
+     for(i=0;i<size;i++){
           t=hol;
           hol=hol->move_next();
-          delete t;   
+          delete t; 
      }
 }
 
-void LL::show_all() 
-{
+void LL::show_all(){
      NODE* t=hol;
-     while(t!=NULL) 
-     {
-          cout <<"Node data:" <<t->get_id() <<endl; 
+     int i;
+     for(i=0;i<size;i++){
+          t->show_node();
           t=t->move_next();
      }
-     // cout <<endl;
 }
-
-void LL::add_node(NODE *&A)
-{
-     A->insert(hol);
+void LL::add_node(NODE *&A){
+     hol->insert(A);
      hol=A;
      size++;
 }

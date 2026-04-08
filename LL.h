@@ -1,14 +1,11 @@
-#ifndef LL_H
-#define LL_H
-#include "NODE.h"
-class LL
-{
+class LL{
       NODE*hol;
       int size;
 public:
       void add_node(NODE*&);
       void show_all();
+    
       ~LL();
       LL();
+
 };
-#endif
